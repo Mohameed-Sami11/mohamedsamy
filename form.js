@@ -2,7 +2,7 @@
    scroll reveal. Sends the request to your serverless Worker (see
    serverless/worker.js). No secrets live in this file. */
 (() => {
-  const ENDPOINT = 'https://portfolio-lead.mohamedsamy147227.workers.dev/lead'; // paste your Worker URL here
+ const ENDPOINT = 'https://portfolio-lead.mohamedsamy147227.workers.dev/lead'; // paste your Worker URL here
   const form = document.getElementById('inqForm');
   if (!form) return;
 
