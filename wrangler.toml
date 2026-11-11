@@ -1,0 +1,11 @@
+name = "portfolio-lead"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Set these in Cloudflare (Workers > portfolio-lead > Settings > Variables):
+#   Secret (encrypted):  WA_TOKEN         (your permanent System User token)
+#   Plain variables:     PHONE_NUMBER_ID  (the sender number's ID from Meta)
+#                        OWNER_NUMBER     201027991936
+#                        TEMPLATE_NAME    new_client_request
+#                        TEMPLATE_LANG    en
+#                        ALLOWED_ORIGIN   https://mohameed-sami11.github.io

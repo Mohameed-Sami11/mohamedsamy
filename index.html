@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0613">
+  <title>Mohamed Samy Badr | Video Editor &amp; AI Designer</title>
+  <meta name="description" content="Video editor and AI designer. Send me your footage and get back a polished edit. Contact me on WhatsApp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Live background: an editing timeline and floating light dust (both built by script.js) -->
+  <div class="timeline" id="timeline" aria-hidden="true"><div class="playhead"></div></div>
+  <canvas id="dust" class="dust" aria-hidden="true"></canvas>
+
+  <!--
+    ============ WHAT TO EDIT ============
+    1. Name                           -> already set to Mohamed Samy Badr
+    2. assets/owner.png               -> your photo (PNG without background looks best)
+    3. assets/work-1.jpg ... work-5.jpg -> your work images (same size, 4:5, e.g. 1080x1350)
+       Titles under each image are the data-title / data-tag attributes below.
+    4. 201027991936                   -> your WhatsApp number, country code first, no + and no leading 0
+       (Egypt example: 201012345678)
+    5. Instagram / YouTube / TikTok / Behance links in the "socials" lists
+  -->
+
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-floor" aria-hidden="true"><div class="floor-grid"></div></div>
+
+    <header class="wrap top">
+      <a class="brand" href="#top" aria-label="Mohamed Samy Badr, back to top">
+        <img src="assets/owner.png" alt="" width="48" height="48">
+        <span>
+          <span class="brand-name">Mohamed Samy Badr</span>
+          <span class="brand-role">Video Editor</span>
+        </span>
+      </a>
+    </header>
+
+    <div class="wrap hero-grid">
+
+      <div class="hero-text">
+        <p class="tc" style="--i:0"><span class="tc-dot" aria-hidden="true"></span>TC <span id="tc">00:00:00:00</span> &middot; 25 FPS</p>
+        <h1><span class="ln" style="--i:1">Video Editor</span> <span class="ln ln-accent" style="--i:2">&amp; AI Designer</span></h1>
+        <p class="cta-line" style="--i:3">For your edit, contact me</p>
+
+        <div class="actions" style="--i:4">
+          <a class="btn btn-primary" href="https://wa.me/201027991936?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20I%20want%20to%20edit%20a%20video" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <ul class="socials">
+            <li><a href="https://www.instagram.com/iammuhammedsamy" target="_blank" rel="noopener">Instagram <span aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.instagram.com/aura_editingstudio" target="_blank" rel="noopener">Aura Studio <span aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.facebook.com/share/18bTK6kjj5/" target="_blank" rel="noopener">Facebook <span aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.tiktok.com/@aura.editingstudio" target="_blank" rel="noopener">TikTok <span aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://snapchat.com/t/ZsUm8fnl" target="_blank" rel="noopener">Snapchat <span aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://mohameed-sami11.github.io/mohamed-samy-portfolio/" target="_blank" rel="noopener">Website <span aria-hidden="true">&#8599;</span></a></li>
+          </ul>
+        </div>
+
+        <p class="tags" style="--i:5">Reels &middot; YouTube &middot; Ads &middot; AI visuals</p>
+      </div>
+
+      <figure class="hero-photo">
+        <img src="assets/owner.png" alt="Portrait of Mohamed Samy Badr" width="800" height="1000">
+      </figure>
+
+      <aside class="work-card" aria-label="A Part Of My Work">
+        <h2 class="work-title">A Part Of My Work</h2>
+
+        <div class="work-frame" id="workFrame">
+          <img class="work-slide is-active" src="assets/work-1.jpg" alt="Work sample 1" data-title="Brand launch reel" data-tag="Video edit">
+          <img class="work-slide" src="assets/work-2.jpg" alt="Work sample 2" data-title="Travel vlog edit" data-tag="Video edit">
+          <img class="work-slide" src="assets/work-3.jpg" alt="Work sample 3" data-title="Product ad" data-tag="Video edit">
+          <img class="work-slide" src="assets/work-4.jpg" alt="Work sample 4" data-title="Neon city" data-tag="AI visual">
+          <img class="work-slide" src="assets/work-5.jpg" alt="Work sample 5" data-title="Portrait to motion" data-tag="AI visual">
+        </div>
+
+        <div class="segs" id="workSegs">
+          <button class="seg" type="button" aria-label="Show work 1"></button>
+          <button class="seg" type="button" aria-label="Show work 2"></button>
+          <button class="seg" type="button" aria-label="Show work 3"></button>
+          <button class="seg" type="button" aria-label="Show work 4"></button>
+          <button class="seg" type="button" aria-label="Show work 5"></button>
+        </div>
+
+        <div class="work-meta">
+          <p class="work-caption"><span id="wcTitle">Brand launch reel</span> <span class="work-tag" id="wcTag">Video edit</span></p>
+          <span class="work-count" id="wcCount">01/05</span>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <main>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Services</p>
+          <h2>What I can make for you</h2>
+        </div>
+        <ul class="rows">
+          <li class="row">
+            <span class="chip chip-v">V1</span>
+            <h3>Short-form edits</h3>
+            <p>Reels, TikTok and Shorts with captions, pacing and sound design.</p>
+            <span class="spec">9:16</span>
+          </li>
+          <li class="row">
+            <span class="chip chip-v">V2</span>
+            <h3>YouTube and long-form</h3>
+            <p>Full episodes and vlogs, cut for pacing, with titles and short cutdowns.</p>
+            <span class="spec">16:9</span>
+          </li>
+          <li class="row">
+            <span class="chip chip-v">V2</span>
+            <h3>Ads and promos</h3>
+            <p>Product and brand videos, delivered in every size your platforms need.</p>
+            <span class="spec">1:1 &middot; 4:5 &middot; 16:9</span>
+          </li>
+          <li class="row">
+            <span class="chip chip-ai">AI</span>
+            <h3>AI visuals</h3>
+            <p>Generated scenes, image to video and b-roll you could not film.</p>
+            <span class="spec">Image to video</span>
+          </li>
+          <li class="row">
+            <span class="chip chip-ai">AI</span>
+            <h3>AI-enhanced edits</h3>
+            <p>Upscaling, background swaps and relighting on top of your footage.</p>
+            <span class="spec">Upscale &middot; Relight</span>
+          </li>
+          <li class="row">
+            <span class="chip chip-a">A1</span>
+            <h3>Color and sound</h3>
+            <p>Color grading, audio cleanup and music synced to the cut.</p>
+            <span class="spec">Grade &middot; Mix</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section inq" id="inquiry">
+      <div class="wrap">
+        <div class="inq-card" id="inqCard">
+          <div class="inq-head">
+            <p class="eyebrow">Start a project</p>
+            <h2>Let's Work Together</h2>
+            <p class="inq-sub">Tell me about your project, and I'll get back to you soon.</p>
+          </div>
+
+          <form class="inq-form" id="inqForm" novalidate>
+            <div class="inq-row">
+              <label class="inq-field">
+                <span>Your Name</span>
+                <input id="inqName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="Your name">
+                <small class="inq-err" data-for="inqName"></small>
+              </label>
+              <label class="inq-field">
+                <span>Phone Number</span>
+                <input id="inqPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="Phone number">
+                <small class="inq-err" data-for="inqPhone"></small>
+              </label>
+            </div>
+
+            <label class="inq-field">
+              <span>What do you need?</span>
+              <select id="inqService" name="service">
+                <option value="">What do you need?</option>
+                <option value="short">Short-form Video Editing</option>
+                <option value="youtube">YouTube / Long-form Editing</option>
+                <option value="ads">Ads &amp; Promotional Videos</option>
+                <option value="ai-visuals">AI Visuals &amp; Video Generation</option>
+                <option value="ai-edit">AI-Enhanced Editing</option>
+                <option value="other">Other</option>
+              </select>
+              <small class="inq-err" data-for="inqService"></small>
+            </label>
+
+            <label class="inq-field">
+              <span>Tell me about your project</span>
+              <textarea id="inqDesc" name="description" rows="5" maxlength="1000" placeholder="Tell us about your project"></textarea>
+              <small class="inq-err" data-for="inqDesc"></small>
+            </label>
+
+            <!-- Honeypot: people never see or fill this. Bots often do. -->
+            <div class="inq-trap" aria-hidden="true">
+              <label>Company <input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <button class="inq-btn" id="inqBtn" type="submit">
+              <span class="inq-btn-text">Send Request</span> <span aria-hidden="true">&rarr;</span>
+            </button>
+            <p class="inq-status" id="inqStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Send me your footage</h2>
+          <p class="contact-note">WhatsApp is the fastest way to reach me.</p>
+        </div>
+        <div class="contact-box">
+          <a class="btn btn-primary btn-big" href="https://wa.me/201027991936?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20I%20want%20to%20edit%20a%20video" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <p class="number-line">
+            <span class="number" id="waNumber">+20 102 799 1936</span>
+            <button class="copy" type="button" data-copy="waNumber">Copy</button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>&copy; 2026 Mohamed Samy Badr</span>
+      <span class="mono">Video Editor &middot; AI Designer</span>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/201027991936?text=Hi%2C%20I%20saw%20your%20portfolio%20and%20I%20want%20to%20edit%20a%20video" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script src="form.js" defer></script>
+  <script src="script.js"></script>
+</body>
+</html>
